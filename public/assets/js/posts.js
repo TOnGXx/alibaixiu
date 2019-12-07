@@ -52,7 +52,7 @@ $('#fileerForm').on('submit', function () {
     $.ajax({
         type: 'get',
         url: '/posts',
-        data:formData,
+        data: formData,
         success: function (response) {
             console.log(response);
             var html = template('postsTpl', response);
@@ -65,6 +65,23 @@ $('#fileerForm').on('submit', function () {
     //阻止表单默认提交行为
     return false
 
+})
+
+//  删除文章
+$('#postsBox').on('click', '.delete', function () {
+    if (confirm('你确定要进行删除操作吗?')) {
+        // 获取到管理员要删除的文章id
+        var id = $(this).attr('data-id');
+        // alert(id)
+        // 发送 ajax 删除文章请求
+        $.ajax({
+            type:'delete',
+            url:'/posts/' +id,
+            success: function(){
+                location.reload();
+            }
+        })
+    }
 })
 
 // 处理日期时间 格式
