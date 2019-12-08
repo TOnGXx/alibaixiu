@@ -6,3 +6,4 @@ module.exports = async (req, res) => {
 		res.send('var isLogin = false')
 	}
 };
+ 
