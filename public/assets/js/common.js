@@ -22,3 +22,14 @@ function formateDate(date) {
 
   return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 }
+
+// 向服务器发送请求 索要登录用户信息
+$.ajax({
+  type:'get',
+  url:'/users/' + userId,
+  success : function(response){
+    console.log(response);
+    $('.avatar').attr('src',response.avatar);
+    $('.profile .name').html(response.nickName)
+  }
+})
