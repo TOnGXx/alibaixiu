@@ -4,6 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title>Users &laquo; Admin</title>
+  <script src="/login/status"></script>
+  <script>
+    if (!isLogin) {
+      location.href = '/admin/login.html'
+    }
+  </script>
   <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="../assets/vendors/nprogress/nprogress.css">
@@ -221,6 +227,7 @@
           </div>
     </script>
   <script src="../assets/js/user.js"></script>
+  <script src="/assets/js/common.js"></script>
 </body>
 
 </html>
