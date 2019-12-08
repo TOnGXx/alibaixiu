@@ -30,6 +30,6 @@ $.ajax({
   success : function(response){
     console.log(response);
     $('.avatar').attr('src',response.avatar);
-    $('.profile .name').html(response.nickName)
+    $('.profile .name').html(response.nickName);
   }
 })
