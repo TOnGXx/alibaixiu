@@ -3,9 +3,9 @@ $.ajax({
     type: 'get',
     url: '/slides',
     success: function (response) {
-        console.log(response);
+        // console.log(response);
         var html = template('slidesTpl', { data: response });
-        console.log(html);
+        // console.log(html);
 
         $('#slidesBox').html(html);
 
